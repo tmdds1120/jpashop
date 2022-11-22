@@ -18,7 +18,7 @@ public class Member {
     private Long id;
 
 
-    @NotEmpty //
+    @NotEmpty
     private String name;
 
     //내장타임을 포함했다는 의미 -> 내장 타입이라는게 무엇이지 =
@@ -30,6 +30,7 @@ public class Member {
 
     // order 테이블에 있는 Member 필드에 대해서 매핑 되었다
     //읽기 전용, 값을 넣어도 pk의 변경이 없다
+    // @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }

@@ -137,5 +137,7 @@ public class MemberService {
     public void update(Long id, String name) {
         Member member = memberRepository.findOne(id);
         member.setName(name);
+        // 멤버를 업데이트해서 반환해도 되는데 애매하다 -> 영속 상태가 끊긴다
+        //
     }
 }
