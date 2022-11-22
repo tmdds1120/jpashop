@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+  datasource:
+#    MVCC=TRUE  :tcp
+    url: jdbc:mysql://localhost:3307/jpashop
+    username: root
+    password: tmdds1120
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
