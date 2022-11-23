@@ -18,6 +18,10 @@ public class JpashopApplication {
 	@Bean
 	// 엔티티를 외부노출 x -> 이런방법이 있다라고 설명을 해준다
 	Hibernate5Module hibernate5Module(){
-		return new Hibernate5Module();
+
+		Hibernate5Module hibernate5Module = new Hibernate5Module();
+
+		hibernate5Module.configure(Hibernate5Module.Feature.FORCE_LAZY_LOADING,true);
+		return hibernate5Module;
 	}
 }
